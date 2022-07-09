@@ -1,8 +1,5 @@
 import sys
 n = int(input())
-
-def plusOne(m):
-    return m+1
         
 for i in range(n):
     d = dict();l = list();
@@ -13,11 +10,10 @@ for i in range(n):
             d[b] += 1
         else:
             d[b] = 2
-
+    # case = (a_1+1)*(a_2+1)*...*(a_len(d)+1) - 1
     case = 1
     for i in d:
         case *= d[i]
     case -= 1
     
     print(case)
-    
