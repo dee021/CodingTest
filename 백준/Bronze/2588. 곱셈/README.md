@@ -1,10 +1,10 @@
-# [Bronze IV] 곱셈 - 2588 
+# [Bronze III] 곱셈 - 2588 
 
 [문제 링크](https://www.acmicpc.net/problem/2588) 
 
 ### 성능 요약
 
-메모리: 30840 KB, 시간: 68 ms
+메모리: 9704 KB, 시간: 144 ms
 
 ### 분류
 
