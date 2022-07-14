@@ -9,11 +9,8 @@ def findCm(m, lst):
         def findNum(num):
             return num//pivot
         temp = sum(list(map(findNum, lst))) # (pivot)cm 단위로 자른 경우 만들 수 있는 랜선의 수
-        if temp == m:
+        if temp >= m: # n개보다 많이 만드는 것도 포함이므로
             maxval = max(maxval, pivot)
-            start = pivot +1
-        elif temp > m:
-            maxval = max(maxval, pivot) # n개보다 많이 만드는 것도 포함이므로
             start = pivot +1
         else: # temp < m:
             end = pivot -1
