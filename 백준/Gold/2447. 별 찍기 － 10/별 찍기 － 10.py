@@ -5,13 +5,12 @@ star[0] = star[2] = '***'
 star[1] = '* *'
 
 def extendStar(num, lst):
+    m = [0 for _ in range(3**num)]
     for i in range(3**num):
-        lst.append(lst[i] + ' '*3**(num) + lst[i])
+        m[i] = lst[i] + ' '*3**(num) + lst[i]
     for i in range(3**num):
         lst[i] = lst[i] * 3
-    for i in range(3**num):
-        lst.append(lst[i])
-    return lst
+    return lst + m + lst
 
 n = int(input())
 
