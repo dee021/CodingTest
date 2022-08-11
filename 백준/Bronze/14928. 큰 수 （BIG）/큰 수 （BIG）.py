@@ -1,1 +1,4 @@
-print(int(input())%20000303)
+ans = 0
+for i in input():
+    ans = (ans*10 + int(i))%20000303
+print(ans)
