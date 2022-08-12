@@ -9,9 +9,9 @@ arr.reverse()
 for i in range(k):
     while arr:
         idx = arr.index(max(arr))
-        if arr[0] != max(arr):
+        if arr[0] != arr[idx]: 
             if i == k-1:
-                ans = [arr[0], max(arr)]
+                ans = [arr[0], arr[idx]]
                 arr = 0
                 break
             arr[idx] = arr[0]
@@ -20,5 +20,5 @@ for i in range(k):
         else:
             arr.popleft()
     if not arr:
-        print(*sorted(ans)) if ans else print(-1)
+        print(*ans) if ans else print(-1)
         break
