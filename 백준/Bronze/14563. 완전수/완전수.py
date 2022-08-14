@@ -1,16 +1,15 @@
 import sys
-from collections import deque
 
-t = int(sys.stdin.readline())
-arr = deque(map(int, sys.stdin.readline().split()))
-
-for i in range(t):
-    res = 0
-    num = arr.popleft()
+def ans(num):
+    num = int(num); res = 0
     for j in range(1, num):
         if num%j == 0:
             res += j
     if res < num:
-        print('Deficient')
+        return 'Deficient'
     else:
-        print('Perfect' if res == num else 'Abundant')
+        return 'Perfect' if res == num else 'Abundant'
+
+t = int(sys.stdin.readline())
+arr = list(map(ans, sys.stdin.readline().split()))
+print('\n'.join(arr))
