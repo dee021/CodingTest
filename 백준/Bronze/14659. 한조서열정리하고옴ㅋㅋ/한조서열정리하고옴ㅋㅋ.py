@@ -1,17 +1,14 @@
 import sys
-def sol(lst):
-    def subsol(m):
-        temp = 0
-        for i in range(m+1, len(lst), 1):
-            if lst[i] < lst[m]:
-                temp += 1
-            if lst[i] > lst[m]:
-                break
-        return temp
-    maxv = max(list(map(subsol, [x for x in range(len(lst))])))
-    return maxv
 
+maxv = temp = h = 0
 n = int(input())
 arr = list(map(int, sys.stdin.readline().split()))
-
-print(sol(arr))
+for i in range(n-1):
+    if arr[h] > arr[i+1]:
+        temp += 1
+    else:
+        maxv = max(maxv, temp)
+        h = i+1
+        temp = 0
+maxv = max(maxv, temp)
+print(maxv)
