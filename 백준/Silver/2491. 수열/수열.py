@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 mi = ma = 1
 n = int(input())
 dp = [0 for _ in range(n)]
