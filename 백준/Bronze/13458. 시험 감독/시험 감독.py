@@ -6,7 +6,7 @@ def sol(num):
     ans = 1; num -= b
     if num > 0:
         ans += num//c
-        num -= num//c * c
+        num = num%c
     if num > 0:
         ans += 1
     return ans
