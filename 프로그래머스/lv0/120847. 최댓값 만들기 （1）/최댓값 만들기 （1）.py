@@ -1,4 +1,5 @@
 def solution(numbers):
-    answer = numbers.pop(numbers.index(max(numbers)))
-    answer *= numbers.pop(numbers.index(max(numbers)))
+    numbers.sort()
+    answer = numbers.pop()
+    answer *= numbers.pop()
     return answer
