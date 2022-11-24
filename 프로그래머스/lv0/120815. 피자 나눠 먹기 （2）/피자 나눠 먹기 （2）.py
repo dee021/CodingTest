@@ -3,5 +3,4 @@ def solution(n):
     while True:
         if 6 * answer / n == int(6 * answer / n):
             return answer
-        else:
-            answer += 1
+        answer += 1
