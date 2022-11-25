@@ -1,6 +1,3 @@
-import sys
-input = sys.stdin.readline
-
 n = input().strip()
 n = n[:len(n)-2]
 f = int(input())
