@@ -1,5 +1,3 @@
 def solution(dots):
     dots.sort()
-    dots = list(map(lambda x, y: abs(x-y),dots[0], dots[-1]))
-    answer = dots[0] * dots[1]
-    return answer
+    return (dots[-1][0]-dots[0][0]) * (dots[-1][1]-dots[0][1])
