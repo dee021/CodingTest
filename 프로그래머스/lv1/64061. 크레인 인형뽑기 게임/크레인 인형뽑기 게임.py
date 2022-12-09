@@ -1,16 +1,15 @@
 def solution(board, moves):
-    board = [list(x) for x in zip(*board)]
-    dep = len(board[0]);bas = []
+    dep = len(board[0]);bas = [0]
     answer = 0
     for m in moves:
         for d in range(dep):
-            if board[m-1][d]:
-                if bas and bas[-1] == board[m-1][d]:
+            if board[d][m-1]:
+                if bas[-1] == board[d][m-1]:
                     bas.pop()
                     answer += 2
                 else:
-                    bas.append(board[m-1][d])
-                board[m-1][d] = 0
+                    bas.append(board[d][m-1])
+                board[d][m-1] = 0
                 break
 
     return answer
