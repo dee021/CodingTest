@@ -1,0 +1,1 @@
+print(input() in ['N', 'n'] and 'Naver D2' or 'Naver Whale')
