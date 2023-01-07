@@ -1,10 +1,8 @@
 ans = 0
-x = input()
+x = list(input())
 
-while int(x) >= 10:
+while len(x) >= 2:
     ans += 1
-    tmp = 0
-    for n in x:
-        tmp += int(n)
-    x = str(tmp)
-print(ans, int(x) in [3,6,9] and 'YES' or 'NO', sep='\n')
+    tmp = sum(map(int, x))
+    x = list(str(tmp))
+print(ans, int(x.pop())%3 and 'NO' or 'YES', sep='\n')
