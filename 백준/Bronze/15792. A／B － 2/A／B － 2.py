@@ -1,2 +1,2 @@
-from fractions import Fraction
-print('%f' %Fraction(*map(int, input().split())))
+a, b = map(int, input().split())
+print('%f' %(a/b))
