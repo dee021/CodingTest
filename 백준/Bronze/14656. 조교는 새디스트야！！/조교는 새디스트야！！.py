@@ -1,3 +1,7 @@
-input()
+ans = 0
+n = int(input())
 arr = list(map(int, input().split()))
-print(len(list(filter(lambda x: arr.index(x)+1 != x, arr))))
+for i in range(n):
+    if arr[i] != i+1:
+        ans += 1
+print(ans)
