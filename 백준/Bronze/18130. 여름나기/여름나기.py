@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 ans = 10**20
 n, q = map(int, input().split())
 for i in range(n):
