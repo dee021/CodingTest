@@ -3,8 +3,6 @@ ans = [([-1] if i > 2 else [0])*101 for i in range(101)]
 def sol(n, m):
     if ans[n][m] != -1:
         return ans[n][m]
-    if n < 3:
-        return 0
     ans[n][m] = sol(n-1, m)
     a = n-1
     for b in range(1, a):
