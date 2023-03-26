@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 s = ['<=3', '<=6', '<=9', '<=12', '<=15', '>15']
 
 def score(d):
