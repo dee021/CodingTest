@@ -1,5 +1,7 @@
-ans = ['does not matter', 'parallelize', 'do not parallelize']
+import sys
+input = sys.stdin.readline
 
+ans = ['does not matter', 'parallelize', 'do not parallelize']
 for _ in range(int(input())):
     d, n, s, p = map(int, input().split())
     t1 = n * s
