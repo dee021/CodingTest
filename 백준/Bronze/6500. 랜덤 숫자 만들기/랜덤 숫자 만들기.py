@@ -1,7 +1,8 @@
-n = 4
+import sys
+input = sys.stdin.readline
 
 while True:
-    a = input()
+    a = input().strip()
     if not int(a):
         break
     ans = set()
