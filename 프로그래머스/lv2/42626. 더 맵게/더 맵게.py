@@ -2,7 +2,6 @@ import heapq
 
 def solution(scoville, K):
     heapq.heapify(scoville)
-    
     answer = 0
     while scoville:
         a = heapq.heappop(scoville)
@@ -10,8 +9,5 @@ def solution(scoville, K):
             return answer
         if a < K and not scoville:
             return -1
-        b = heapq.heappop(scoville)
-        a += 2*b
-        heapq.heappush(scoville, a)
+        heapq.heappush(scoville, a+2*heapq.heappop(scoville))
         answer += 1
-    return -1 if scoville else answer
