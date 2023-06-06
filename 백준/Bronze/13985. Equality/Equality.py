@@ -1,0 +1,1 @@
+print(eval(input().replace('=', '==')) and 'YES' or 'NO')
