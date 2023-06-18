@@ -1,4 +1,4 @@
-s = list(map(ord, input()))
+s = list(input())
 ans = 1
 for i in range(1, len(s)):
     if s[i] <= s[i-1]:
