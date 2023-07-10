@@ -1,0 +1,1 @@
+print(input().startswith('555') and 'YES' or 'NO')
