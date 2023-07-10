@@ -1,0 +1,1 @@
+print(sum([str(x).count('3')+str(x).count('6')+str(x).count('9') for x in range(int(input())+1)]))
