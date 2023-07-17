@@ -1,0 +1,1 @@
+print(int(bool(input().count(input()))))
