@@ -1,4 +1,3 @@
 import sys
 input = sys.stdin.readline
-
-print(*sorted([int(input()) for _ in range(int(input()))]), sep='\n')
+sys.stdout.write('\n'.join(map(str, sorted([int(input()) for _ in range(int(input()))]))))
