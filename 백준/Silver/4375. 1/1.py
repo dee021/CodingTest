@@ -1,9 +1,12 @@
+import sys
+input = sys.stdin.readline
+
 while True:
     try:
-        n = input().strip()
+        n = int(input())
     except:
         break
-    ans, n = len(n), int(n)
+    ans = len(str(n))
     a = '1'*ans
     while True:
         if not int(a)%n:
