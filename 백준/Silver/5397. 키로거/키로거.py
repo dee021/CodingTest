@@ -1,4 +1,6 @@
 from collections import deque
+import sys
+input = sys.stdin.readline
 
 for _ in range(int(input())):
     p, w = [], deque() # pw = p + w
