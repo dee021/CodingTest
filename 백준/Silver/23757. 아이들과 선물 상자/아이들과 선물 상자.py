@@ -1,16 +1,17 @@
-import bisect
+import heapq
 
 def thanks(cnt):
-    gift = gifts.pop()
+    gift = -heapq.heappop(gifts)
     if cnt <= gift:
         gift -= cnt
         if gift:
-            gifts.insert(bisect.bisect_left(gifts, gift), gift)
+            heapq.heappush(gifts, -gift)
         return True
     return False
 
 n, m = map(int, input().split())
-gifts = sorted(map(int, input().split()))
+gifts = list(map(int.__neg__, map(int, input().split())))
+heapq.heapify(gifts)
 kids = list(map(int, input().split()))
 
 for k in kids:
