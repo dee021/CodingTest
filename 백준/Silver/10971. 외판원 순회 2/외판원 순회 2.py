@@ -1,23 +1,20 @@
-def sol(start, t):
-    global ans
-    if all(visited):
-        if w[start][0]:
-            return t + w[start][0]
-        return 10**7
-    if t > ans:
-        return 10**7
+def sol(start, visited):
+    if visited == ALLVISITED:
+        return dists[start][0] or INF
     
-    p = 10**7
-    for i in range(1, n):
-        if not visited[i] and w[start][i]:
-            visited[i] = 1
-            p = min(p, sol(i, t+w[start][i]))
-            visited[i] = 0
-    return p
+    if dp[start][visited] != INF:
+        return dp[start][visited]
+    
+    tmp = INF
+    for end in range(n):
+        if not (visited & 1 << end) and dists[start][end]:
+            tmp = min(tmp, dists[start][end] + sol(end, visited | (1 << end)))
+    dp[start][visited] = tmp
+    return tmp
 
-ans = 10**7
 n = int(input())
-visited = [0 for _ in range(n)]
-visited[0] = 1
-w = [list(map(int, input().split())) for _ in range(n)]
-print(sol(0, 0))
+INF = float('inf')
+ALLVISITED = (1 << n)-1
+dists = [list(map(int, input().split())) for _ in range(n)]
+dp = [[INF for _ in range(1 << n)] for _ in range(n)]
+print(sol(0, 1))
