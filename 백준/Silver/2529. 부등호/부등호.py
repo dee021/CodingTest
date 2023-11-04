@@ -1,7 +1,10 @@
 def sol(cnt, res):
+    global n, x
     if cnt == c+1:
-        res = res.replace('<', '').replace('>', '')
-        ans.append(res)
+        if not n:
+            n = res.replace('>', '').replace('<', '')
+        else:
+            x = res.replace('>', '').replace('<', '')
         return
     
     if res:
@@ -12,10 +15,9 @@ def sol(cnt, res):
             sol(cnt+1, res+str(k))
             nums[k] = 1
 
+n, x = '', ''
 c = int(input())
 arr = input().split()
 nums = [1 for _ in range(10)]
-ans = []
 sol(0, '')
-ans.sort()
-print(ans[-1], ans[0], sep='\n')
+print(x, n, sep='\n')
