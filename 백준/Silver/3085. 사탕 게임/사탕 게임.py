@@ -20,15 +20,17 @@ def cnt():
 ans = 0
 n = int(input())
 arr = [list(input()) for _ in range(n)]
-
+cnt()
 for i in range(n):
-    for j in range(n-1):
-        arr[i][j], arr[i][j+1] = arr[i][j+1], arr[i][j]
-        cnt()
-        arr[i][j], arr[i][j+1] = arr[i][j+1], arr[i][j]
+    for j in range(n):
+        if j+1 < n and arr[i][j] != arr[i][j+1]:
+            arr[i][j], arr[i][j+1] = arr[i][j+1], arr[i][j]
+            cnt()
+            arr[i][j], arr[i][j+1] = arr[i][j+1], arr[i][j]
         
-        if i+1 < n:
+        if i+1 < n and arr[i][j] != arr[i+1][j]:
             arr[i][j], arr[i+1][j] = arr[i+1][j], arr[i][j]
             cnt()
             arr[i][j], arr[i+1][j] = arr[i+1][j], arr[i][j]
+
 print(ans)
