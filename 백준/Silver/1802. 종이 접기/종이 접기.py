@@ -3,12 +3,10 @@ input = sys.stdin.readline
 
 def sol(lst):
     while len(lst) > 1:
-        f = lst[-1]
-        for i in range(len(lst)-1, -1, -2):
-            if f != lst[i]:
+        tmp, lst = lst[0::2], lst[1::2]
+        for i in range(len(tmp)-1):
+            if tmp[i] == tmp[i+1]:
                 return 0
-            f ^= 1
-            del lst[i]
     return 1
 
 for _ in range(int(input())):
