@@ -28,10 +28,10 @@ for p in range(3, n+1, 2):
         continue
     prime.append(p)
     if p**2 <= n+1:
-        for k in range(2, n+1):
-            if p*k > n:
+        for k in range(p*p, n+1, p):
+            if k > n:
                 break
-            nums[p*k] = 0
+            nums[k] = 0
 
 for i in prime:
     if isAns(i):
