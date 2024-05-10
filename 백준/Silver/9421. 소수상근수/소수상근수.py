@@ -1,3 +1,6 @@
+import sys
+print = sys.stdout.write
+
 def isAns(num):
     global mem
     path = set()
@@ -32,4 +35,4 @@ for p in range(3, n+1, 2):
 
 for i in prime:
     if isAns(i):
-        print(i)
+        print(str(i)+'\n')
