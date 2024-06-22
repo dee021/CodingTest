@@ -8,5 +8,5 @@ def conv(k, n):
     return (tmp + d[k])[::-1]
 
 def solution(n, t, m, p):
-    res = ''.join([conv(x, n) for x in range(10**6)])
+    res = ''.join([conv(x, n) for x in range(t*m)])
     return res[p-1::m][:t]
