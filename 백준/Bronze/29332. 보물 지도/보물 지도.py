@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
 line = {'L':float('inf'), 'R':-float('inf'), 'U':-float('inf'), 'D':float('inf')}
 for _ in range(n):
