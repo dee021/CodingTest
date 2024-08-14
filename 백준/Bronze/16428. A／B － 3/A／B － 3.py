@@ -1,2 +1,3 @@
 a, b = map(int, input().split())
-print(a//b, a%b, sep='\n')
+m = a//abs(b)*(-1 if b < 0 else 1)
+print(m, a - m*b, sep='\n')
