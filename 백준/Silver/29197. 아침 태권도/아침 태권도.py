@@ -2,35 +2,20 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-arr = [[] for _ in range(5)]
-cnt = 0
+arr = [set() for _ in range(6)]
 for _ in range(n):
     x, y = map(int, input().split())
-    if 0 in [x, y]:
-        idx = 0
+    if x == 0:
+        arr[0].add(y/abs(y))
+    elif y == 0:
+        arr[5].add(x/abs(x))
     elif x > 0 and y > 0:
-        idx = 1
+        arr[1].add(y/x)
     elif x < 0 and y > 0:
-        idx = 2
+        arr[2].add(y/x)
     elif x < 0 and y < 0:
-        idx = 3
+        arr[3].add(y/x)
     else:
-        idx = 4
-    flag = 0
-    for a, b in arr[idx]:
-        if x == 0:
-            if a == 0 and b*y > 0:
-                flag = 1
-        elif y == 0:
-            if b == 0 and a * x > 0:
-                flag = 1
-        else:
-            if y/x == b/a:
-                flag = 1
-        if flag:
-            break
-    if not flag:
-        arr[idx].append(tuple([x, y]))
-        cnt += 1
+        arr[4].add(y/x)
 
-print(cnt)
+print(sum([len(arr[i]) for i in range(6)]))
