@@ -2,16 +2,15 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-stack = []
-ans = 1
+ans = 0
+d = {}
 for a in map(int, input().split()):
-    flag = False
-    for i in range(len(stack)):
-        if stack[i][0] + stack[i][1] == a:
-            flag = True
-            stack[i][1] += 1
-            ans = max(ans, stack[i][1])
-    if not flag:
-        stack.append([a, 1])
-
+    if a-1 in d and a in d:
+        d[a] = max(d[a], d.get(a-1)+1)
+    elif a-1 in d:
+        d[a] = d.get(a-1)+1
+    else:
+        d[a] = 1
+    ans = max(ans, d[a])
+        
 print(ans)
