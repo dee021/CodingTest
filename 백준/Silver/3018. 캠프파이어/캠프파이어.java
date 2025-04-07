@@ -35,7 +35,7 @@ public class Main {
 							syncSong[j] = true;
 							break;
 						}
-					for (int p = 0; p < k; p++) arr[tmp[p]][j] = true;
+					if (syncSong[j]) for (int p = 0; p < k; p++) arr[tmp[p]][j] = true;
 				}
 			}
 		}
