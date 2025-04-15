@@ -1,6 +1,3 @@
-import sys
-input = sys.stdin.readline
-
 n, k = map(int, input().split())
 m = [[] for _ in range(n)]
 for _ in range(n):
