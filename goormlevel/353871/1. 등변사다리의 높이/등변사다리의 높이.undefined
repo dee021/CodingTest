@@ -1,0 +1,14 @@
+import java.io.*;
+import java.util.StringTokenizer;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+
+        int k = Integer.parseInt(st.nextToken()), d1 = Integer.parseInt(st.nextToken()), d2 = Integer.parseInt(st.nextToken());
+        int x = Math.abs(d1 - d2);
+        
+        System.out.println(4 * k * k - (x*x));
+        br.close();
+	}
+}
