@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.StringTokenizer;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
+    StringBuilder sb = new StringBuilder();
+
+
+    int t = Integer.parseInt(br.readLine());
+        
+    while (t-- > 0) {
+	    st = new StringTokenizer(br.readLine(), " ");
+      boolean ans = false;
+      int x = Math.abs(Integer.parseInt(st.nextToken())), y = Math.abs(Integer.parseInt(st.nextToken())), n = Integer.parseInt(st.nextToken());
+      if (n >= x + y) {
+        if ((n - x - y) % 2 == 0) ans = true;
+      }
+        	
+      sb.append(ans?"YES\n":"NO\n");
+    }
+        
+    System.out.print(sb);
+    br.close();
+	}
+}
