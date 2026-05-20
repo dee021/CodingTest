@@ -1,0 +1,13 @@
+import java.io.*;
+import java.util.StringTokenizer;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+
+        double n = Double.parseDouble(st.nextToken()), m = Double.parseDouble(st.nextToken());
+        double ans = 7 * n / (n + m);
+        
+        System.out.println(String.format("%.2f", Math.floor(ans * 100) / 100.0));
+	}
+}
