@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.StringTokenizer;
+import java.util.Arrays;
+
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+
+    int n = Integer.parseInt(st.nextToken()), d = Integer.parseInt(st.nextToken()), cnt = n > 1? n:0;
+    int[] arr = new int[n];
+		
+    st = new StringTokenizer(br.readLine(), " ");
+    for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(st.nextToken());
+        
+    Arrays.sort(arr);
+    for (int i = 0; i < n-1; i++) {
+      cnt = Math.min(cnt, n - binarySearch(arr, i, d));
+    }
+        
+        
+    System.out.println(cnt);
+	}
+
+	static int binarySearch(int[] arr, int s, int d) {
+		int left = s, right = arr.length-1;
+		
+		while (left <= right) {
+			int mid = (left + right) / 2;
+			if (arr[mid] - arr[s] > d) right = mid -1;
+			else left = mid +1;
+		}
+		
+		return right - s +1;
+	}
+}
