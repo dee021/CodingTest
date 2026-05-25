@@ -1,0 +1,52 @@
+import java.io.*;
+import java.util.StringTokenizer;
+import java.util.ArrayDeque;
+import java.util.Set;
+import java.util.HashSet;
+
+class Main {
+
+	static ArrayDeque<int[]> ad = new ArrayDeque<>(); // x, y, s
+	static Set<String> set = new HashSet<>();
+	
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		ad.add(new int[] {0,0,1});
+    set.add("0 0");
+        
+    int n = Integer.parseInt(br.readLine()), ans = 0;
+    String cmd = br.readLine();
+    StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        
+    for (char d: cmd.toCharArray()) {
+      int[] cur = ad.peekLast();
+      int x = cur[0], y = cur[1];
+      switch(d) {
+      case 'R': x++;break;
+      case 'L': x--;break;
+      case 'U': y++;break;
+      case 'D': y--;break;
+      }
+        	
+      check(x, y);
+      set.add(x + " " + y);
+      ad.add(new int[] {x, y, Integer.parseInt(st.nextToken())});
+        	
+    }
+        
+    while (!ad.isEmpty()) {
+      ans += ad.poll()[2];
+    }
+        
+        
+    System.out.println(ans);
+    br.close();
+  }
+	
+	static void check(int x, int y) {
+		while (set.contains(x + " " + y)) {
+			set.remove(ad.peekLast()[0] + " " + ad.peekLast()[1]);
+			ad.pollLast();
+		}
+	}
+}
